@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main container*/
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+
+/* Style for subcontainers*/
+.subcontainer {
+    width: 30%;
+    text-align: center;
+    padding: 20px;
+    border: solid 1px black;
+}
+
+
+/* Style for start*/
+.container-start {}
+
+/*Style for middle*/
+.container-inprogress {}
+
+/*Style for middle*/
+.container-end {}
+
+/* Style for subcontainers content*/
+.description {
+    background: yellow;
+}
+
+.add-next {
+    background: pink;
+}
+/* Footer's style*/
+footer {
+    text-align: center;
+    padding-top: 100px;
+}
+
+footer div {}
