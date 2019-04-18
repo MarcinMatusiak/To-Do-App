@@ -1,0 +1,135 @@
+/* Reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    /* Colors*/
+    --menu_background: rgba(0, 0, 0, .35);
+    --containers_background: #dfe3e6;
+    --drop_down: #cdd3cd;
+    --icons: #fff;
+    --add_button: #5aac44;
+    --button_hover: #3f6f21;
+    --remove_hover: #a80601;
+
+    --primary_font_color: #242424;
+    /* Fonts */
+    --main_font: 'Roboto', sans-serif;
+    --secondary_font: 'Cute Font', cursive;
+}
+
+html {
+    font-family: var(--main_font);
+    cursor: default;
+    overflow-x: hidden;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../images/background_loggin.jpeg");
+    background-size: cover;
+}
+
+/* Container with category tables */
+.container__loggin {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    width: 30vw;
+    height: auto;
+    background-color: var(--containers_background);
+}
+
+.container__loggin div {
+    display: flex;
+    width: 70%;
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.container__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px 0;
+}
+
+.container__logo p {
+    font-size: 24px;
+    text-indent: 8px;
+    font-family: var(--secondary_font);
+}
+
+.container__logo svg {
+    font-size: 20px;
+}
+
+.container__loggin div label {
+    font-family: var(--main_font);
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+.container__loggin div input {
+    width: 100%;
+    height: 25px;
+    border-radius: 4px;
+    border: none;
+    text-indent: 8px;
+    color: var(--menu_background);
+    box-shadow: 0 0.2px 1px var(--primary_font_color);
+}
+
+.container__loggin div input:last-child {
+    margin-bottom: 25px;
+}
+
+.container__loggin div div {
+    height: 25px;
+    width: 100%;
+    align-items: flex-end;
+    display: flex;
+    margin: 16px 0 24px 0;
+}
+
+.container__loggin div div a {
+    text-decoration: none;
+    font-size: 12px;
+    height: 100%;
+    width: 100px;
+    text-align: center;
+    text-indent: 10px;
+    background-color: var(--add_button);
+    color: var(--icons);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 0.5px 2px black;
+}
+
+.container__loggin div div a:hover {
+    background-color: var(--button_hover);
+}
+
+.container__loggin div div a svg {
+    font-size: 16px;
+}
+
+

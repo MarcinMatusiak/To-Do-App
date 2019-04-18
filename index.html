@@ -4,51 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loggin.css">
+    <link href="https://fonts.googleapis.com/css?family=Cute+Font|Roboto:300,400&amp;subset=latin-ext" rel="stylesheet">
     <title>Safety Life List</title>
 </head>
 
 <body>
-    <!-- Main container -->
-    <div class="container">
-        <section class="subcontainer container__left">
-            <div class="container-start">
-                <h1>To Do</h1>
-                <div class="description">
-                    <p> Here is the first task </p>
-                </div>
-                <div class="add-next">
-                    + Add task
-                </div>
-            </div>
-        </section>
+<!-- Main container -->
+<div class="container">
 
-        <section class="subcontainer">
-            <div class="container-middle">
-                <h1>In progress</h1>
-                <div class="description">
-                </div>
-                <div class="add-next">
-                </div>
+    <!-- Login container -->
+    <section class="container__loggin">
+        <div>
+            <section class="container__logo">
+                <i class="fas fa-hard-hat"></i>
+                <p>Safety Life List</p>
+            </section>
+            <label for="login">Login</label>
+            <input id="login" type="text">
+            <label for="password">Password</label>
+            <input id="password" type="password">
+            <div>
+                <a href="#"><i class="fas fa-sign-in-alt"></i>  Zaloguj się </a>
             </div>
-
-        </section>
-        <section class="subcontainer ">
-            <div class="container-end">
-                <h1>Done</h1>
-                <div class="description">
-                </div>
-                <div class="add-next">
-                </div>
-            </div>
-        </section>
-    </div>
-    <footer>
-        <div>Made by Campteam 2019</div>
-    </footer>
+        </div>
+    </section>
+</div>
 
 </body>
 <script src="js/index.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
+        integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
+        crossorigin="anonymous"></script>
 </html>

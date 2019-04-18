@@ -1,0 +1,182 @@
+/* Reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    /* Colors*/
+    --menu_background: rgba(0, 0, 0, .35);
+    --containers_background: #dfe3e6;
+    --drop_down: #cdd3cd;
+    --icons: #fff;
+    --add_button: #5aac44;
+    --button_hover: #3f6f21;
+    --remove_hover: #a80601;
+
+    --primary_font_color: #242424;
+    /* Fonts */
+    --main_font: 'Roboto', sans-serif;
+    --secondary_font: 'Cute Font', cursive;
+}
+
+html {
+    font-family: var(--main_font);
+    cursor: default;
+    overflow-x: hidden;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../images/background_alternative.jpg");
+    background-size: cover;
+}
+
+/* Container menu */
+.container__menu {
+    height: 50px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--menu_background);
+    padding: 0 40px;
+}
+
+.container__menu a {
+    color: var(--icons);
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--secondary_font);
+    font-size: 25px;
+    border: none;
+    text-decoration: none;
+}
+
+.container__menu a>svg {
+    margin-right: 10px;
+}
+
+/* Container with category tables */
+.container__tasks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: flex-start;
+    width: 100vw;
+    height: auto;
+    color: var(--primary_font_color);
+}
+
+/* Tasks containers */
+.container__todo,
+.container__progress,
+.container__done {
+    margin: 20px 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    height: auto;
+    background-color: var(--containers_background);
+    border: none;
+    border-radius: 5px;
+}
+
+.container__todo h1,
+.container__progress h1,
+.container__done h1 {
+    font-family: var(--main_font);
+    font-size: 20px;
+    text-align: center;
+    color: var(--primary_font_color);
+    padding: 15px 0;
+}
+
+.container__todo h1>svg,
+.container__progress h1>svg,
+.container__done h1>svg {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+/* Container for tasks */
+.task {
+    height: auto;
+    min-height: 100px;
+    width: 100%;
+    display: flex;
+    padding: 10px 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--drop_down);
+}
+
+/* Single task */
+.task__description {
+    height: auto;
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 1px 0 rgba(9, 45, 66, .25);
+}
+
+.task__description svg:hover {
+    color: var(--remove_hover);
+}
+
+/* More place after last task (easier drag and drop) */
+.task__description:last-child {
+    margin-bottom: 60px;
+}
+
+/* Buttons "Add a card" */
+.task__add {
+    margin: 15px 0;
+    height: 30px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.task__add button {
+    height: 30px;
+    width: auto;
+    background-color: var(--add_button);
+    color: var(--icons);
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.task__add button:hover {
+    background-color: var(--button_hover);
+}
+
+.task__add button>svg {
+    font-size: 16px;
+    margin-right: 10px;
+}
