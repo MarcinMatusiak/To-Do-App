@@ -1,0 +1,29 @@
+{
+  "name": "safety-life-list",
+  "version": "1.0.0",
+  "description": "Safety Life List helps to avoid unwanted suprises.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/campteam/safety-life-list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/campteam/safety-life-list/issues"
+  },
+  "homepage": "https://gitlab.com/campteam/safety-life-list#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.1",
+    "mustache-express": "^1.2.8",
+    "nodemon": "^1.18.11"
+  },
+  "devDependencies": {
+    "@types/node": "^11.13.4"
+  }
+}
