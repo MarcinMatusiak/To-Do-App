@@ -12,7 +12,8 @@ if(!config.get('jwtPrivateKey')) {
     process.exit(1);
 }
 
-app.use(bodyParser.urlencoded({extended: true }))
+app.use(bodyParser.urlencoded({extended: true }));
+app.use(bodyParser.json());
 app.use('/', login);
 app.use('/register', users);
 

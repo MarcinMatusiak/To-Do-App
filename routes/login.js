@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt');
 const PasswordComplexity = require('joi-password-complexity');
 
 
+
 router.post('/', async (req, res) => {
      const { error } = validate(req.body);
      if (error) return res.status(400).render('login', {"error": error.details[0].message});
@@ -17,7 +18,7 @@ router.post('/', async (req, res) => {
     if (!isValidPassword) return res.status(400).render('login', {"error":"Invalid login or password"});
     
     const token = user.generateToken();
-    res.redirect('/me');
+    res.header('x-log-token',token).render('login', {"error": "Success!"});
 });
 
 function validate(req) {
