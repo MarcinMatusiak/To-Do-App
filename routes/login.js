@@ -9,16 +9,16 @@ const PasswordComplexity = require('joi-password-complexity');
 
 router.post('/', async (req, res) => {
      const { error } = validate(req.body);
-     if (error) return res.status(400).render('login', {"error": error.details[0].message});
+     if (error) return res.status(400).json({error: error.details[0].message});
 
      let user = await User.findOne({ login: req.body.login });
-     if (!user) return res.status(400).render('login', {"error":"Invalid login or password"});
+     if (!user) return res.status(400).json({error:"Invalid login or password"});
 
     const isValidPassword = await bcrypt.compare(req.body.password, user.password);
-    if (!isValidPassword) return res.status(400).render('login', {"error":"Invalid login or password"});
+    if (!isValidPassword) return res.status(400).json({error:"Invalid login or password"});
     
     const token = user.generateToken();
-    res.header('x-log-token',token).render('login', {"error": "Success!"});
+    res.status(200).json({ token: token});
 });
 
 function validate(req) {

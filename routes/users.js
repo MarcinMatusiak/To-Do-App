@@ -5,11 +5,10 @@ const bcrypt = require('bcrypt');
 
 router.post('/', async (req, res) => {
      const { error } = validate(req.body);
-    if (error) return res.status(400).render('register', {"error": error.details[0].message});
+    if (error) return res.status(400).json({error: error.details[0].message});
 
      let user = await User.findOne({ login: req.body.login });
-    if (user) return res.status(400).render('register', {"error":"Login already taken."});
-
+     if (user) return res.status(400).json({error:"Login already taken."});
 
      user = new User({
          login: req.body.login,
@@ -20,7 +19,7 @@ router.post('/', async (req, res) => {
      await user.save();
 
      const token = user.generateToken();
-     res.header('x-log-token',token).render('register', {"error": "Success!"});
+     res.status(200).json({ token: token});
 });
 
 module.exports = router;
