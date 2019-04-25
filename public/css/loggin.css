@@ -108,7 +108,7 @@ html {
     margin: 16px 0 24px 0;
 }
 
-.container__loggin div div a {
+.container__loggin div div button {
     text-decoration: none;
     font-size: 12px;
     height: 100%;
@@ -124,7 +124,7 @@ html {
     box-shadow: 0 0.5px 2px black;
 }
 
-.container__loggin div div a:hover {
+.container__loggin div div button:hover {
     background-color: var(--button_hover);
 }
 

@@ -1,11 +1,12 @@
-const mongoose = require('mongoose');
 const Task = require('../models/user');
+const auth = require('../middleware/auth');
+const router = express.Router();
 
-async function createTask(){
+router.post('/', auth, async function createTask(){
     const task = new Task({
         name: 'first task'
     });
 
     const savedTask = await task.save();
     console.log(savedTask);
-}
+});
