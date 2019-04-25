@@ -4,7 +4,7 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 
 router.post('/', async (req, res) => {
-     const { error } = validate(req.body);
+    const { error } = validate(req.body);
     if (error) return res.status(400).json({error: error.details[0].message});
 
      let user = await User.findOne({ login: req.body.login });
