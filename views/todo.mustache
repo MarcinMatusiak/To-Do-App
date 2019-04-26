@@ -34,6 +34,11 @@
                 <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag2">
                     <p> Here is the second task </p><i class="fas fa-times"></i>
                 </div>
+                {{#todos}}
+                <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag{{_id}}">
+                    <p>{{name}} - {{isDone}}</p><i class="fas fa-times"></i>
+                </div>
+                {{/todos}}
             </div>
             <div class="task__add">
                 <button><i class="fas fa-plus-square"></i> Add a card</button>

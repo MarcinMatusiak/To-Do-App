@@ -15,4 +15,11 @@ router.post('/', async(req, res) => {
   res.status(200).json({task: task});
 });
 
+router.get('/', async (req, res) => {
+  Task.find({})
+    .then(results => {
+      res.render('todo', {todos: results})
+    });
+})
+
 module.exports = router;
