@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
 app.use('/', login);
 app.use('/register', users);
-app.use('/add', tasks);
+app.use('/me', tasks);
 app.use('/update', updateTask)
 
 //View engine setup

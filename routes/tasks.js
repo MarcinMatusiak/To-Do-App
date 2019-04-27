@@ -12,7 +12,13 @@ router.post('/', async(req, res) => {
     });
 
   await task.save();
-  res.status(200).json({task: task});
+  /*res.status(200).json({task: task})*/
+  Task.find({})
+    .then(results => {
+      res.render('todo', {
+        todos: results
+      })
+    });
 });
 
 router.get('/', async (req, res) => {

@@ -7,6 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/todo.css">
+    <link rel="stylesheet" href="css/modalWindow.css">
     <link href="https://fonts.googleapis.com/css?family=Cute+Font|Roboto:300,400&amp;subset=latin-ext" rel="stylesheet">
     <title>Safety Life List</title>
 </head>
@@ -41,7 +42,21 @@
                 {{/todos}}
             </div>
             <div class="task__add">
-                <button><i class="fas fa-plus-square"></i> Add a card</button>
+                <button class="open-modal" type="button"><i class="fas fa-plus-square"></i> Add a card</button>
+                <!-- Modal Window -->
+                <div id="modal-window" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <form action="/me" method="post">
+                        <input type="text" name="name" >
+                        <select>
+                            <option value="to do">to do</option>
+                            <option value="in progress">in progress</option>
+                            <option value="done">done</option>
+                        <select>
+                        <button type="subbmit" id="subbmit-task"><i class="fas fa-plus-square"></i> Add a task</button>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -52,7 +67,7 @@
 
             </div>
             <div class="task__add">
-                <button><i class="fas fa-plus-square"></i> Add a card</button>
+                <button class="open-modal" type="button"><i class="fas fa-plus-square"></i> Add a card</button>
             </div>
         </section>
 
@@ -63,7 +78,7 @@
 
             </div>
             <div class="task__add">
-                <button><i class="fas fa-plus-square"></i> Add a card</button>
+                <button class="open-modal" type="button"><i class="fas fa-plus-square"></i> Add a card</button>
             </div>
         </section>
     </section>
@@ -71,6 +86,7 @@
 </div>
 </body>
 <script src="dragdrop.js"></script>
+<script src="openModal.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
         integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
         crossorigin="anonymous"></script>
