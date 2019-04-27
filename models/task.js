@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Joi = require('joi');
 
 const taskSchema = new mongoose.Schema({
-    name: {
+    content: {
         type: String,
         required: true
     },
@@ -17,8 +17,8 @@ const Task = mongoose.model('Task', taskSchema);
 
 function validateTask(task) {
     const schema = {
-        name: Joi.string().required(),
-        isDone: Joi.boolean()
+        content: Joi.string().required(),
+        isDone: Joi.string().valid(['to do', 'in progress', 'done'])
     }
 
     return Joi.validate(task, schema);
