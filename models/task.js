@@ -7,8 +7,9 @@ const taskSchema = new mongoose.Schema({
         required: true
     },
     isDone: {
-        type: Boolean,
-        default: false,
+        type: String,
+        enum: ['to do', 'in progress', 'done'],
+        default: 'to do',
     }
 });
 

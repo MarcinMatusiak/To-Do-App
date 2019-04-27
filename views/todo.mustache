@@ -30,14 +30,17 @@
             <h1><i class="fas fa-th-list"></i><br/> ToDo</h1>
             <div class="task" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag1">
-                    <p> Here is the first task </p><i class="fas fa-times"></i>
+                    <p> Here is the first task </p>
+                    <div class="edit-close"><i class="fas fa-times"></i><i class="fas fa-edit"></i></div>
                 </div>
                 <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag2">
-                    <p> Here is the second task </p><i class="fas fa-times"></i>
+                    <p> Here is the second task </p>
+                    <div class="edit-close"><i class="fas fa-times"></i><i class="fas fa-edit"></i></div>
                 </div>
                 {{#todos}}
                 <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag{{_id}}">
-                    <p>{{name}} - {{isDone}}</p><i class="fas fa-times"></i>
+                    <p>{{name}}</p>
+                    <div class="edit-close"><i class="fas fa-times"></i><i class="fas fa-edit"></i></div>
                 </div>
                 {{/todos}}
             </div>
@@ -49,7 +52,7 @@
                         <span class="close">&times;</span>
                         <form action="/me" method="post">
                         <input type="text" name="name" >
-                        <select>
+                        <select id="select">
                             <option value="to do">to do</option>
                             <option value="in progress">in progress</option>
                             <option value="done">done</option>
