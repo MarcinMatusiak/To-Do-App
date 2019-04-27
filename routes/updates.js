@@ -10,7 +10,7 @@ router.put('/:id', async(req, res) => {
     if (error) return res.status(400).json({error: error.details[0].message});
 
     task.set({
-        name: req.body.name,
+        content: req.body.name,
         isDone: req.body.isDone
     });
 
