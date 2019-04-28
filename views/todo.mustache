@@ -21,6 +21,7 @@
             <i class="fas fa-hard-hat"></i>
             Safety Life List
         </a>
+        <button onclick="clear(event)" id="clear" title="Wyczyść wszystko"><i class="fas fa-trash"></i></button>
     </section>
 
     <!-- Tables with tasks -->
@@ -56,7 +57,7 @@
                             <option value="to do">to do</option>
                             <option value="in progress">in progress</option>
                             <option value="done">done</option>
-                        <select>
+                        </select>
                         <p id="error"></p>
                         <button type="submit" id="submit-task"><i class="fas fa-plus-square"></i> Add a task</button>
                     </div>
@@ -105,6 +106,7 @@
 </body>
 <script src="dragdrop.js"></script>
 <script src="openModal.js"></script>
+<script src="clearBoard.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
         integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
         crossorigin="anonymous"></script>

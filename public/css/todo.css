@@ -69,6 +69,23 @@ html {
     text-decoration: none;
 }
 
+.container__menu button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: var(--main_font);
+}
+
+.container__menu button>svg {
+    margin-left: 5px;
+}
+
+.container__menu button:hover {
+    color: var(--add_button);
+}
+
 .container__menu a>svg {
     margin-right: 10px;
 }
