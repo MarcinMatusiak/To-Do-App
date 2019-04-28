@@ -38,7 +38,6 @@
     width: 100%;
     font-size: 1.2em;
     padding: 0 10px;
-    border-radius: 5px;
     box-shadow: 0 1px 0 rgba(9, 45, 66, .25);
 }
 
@@ -55,4 +54,40 @@
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+#add_task {
+    height: auto;
+}
+
+#add_task input {
+    margin-bottom: 20px;
+    border-radius: 0;
+    background-color: #E2E8E2;
+    text-align: left;
+    font-size: 12px;
+    border: none;
+}
+
+#add_task select {
+    text-indent: 10px;
+    background-color: #E2E8E2;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border: 2px solid #E2E8E2;
+}
+
+#add_task select:hover {
+    text-indent: 10px;
+    background-color: greenyellow;
+}
+
+#error {
+    font-size: 12px;
+    color: #a80601;
+    margin-bottom: 20px;
+    font-weight: bold;
 }

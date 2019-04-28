@@ -18,13 +18,10 @@ app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
 app.use('/', login);
 app.use('/register', users);
-<<<<<<< Updated upstream
 app.use('/me', tasks);
-app.use('/update', updateTask)
-=======
+app.use('/update', updateTask);
 app.use('/add', tasks);
 app.use('/update', updateTask);
->>>>>>> Stashed changes
 
 //View engine setup
 const mustacheExpressInstance = mustacheExpress();

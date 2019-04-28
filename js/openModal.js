@@ -55,5 +55,5 @@ document.getElementById('add_task').addEventListener('submit', (event) => {
       .catch(function(err) {
         console.log('Fetch Error :-S', err);
       });
-})
+});
 
