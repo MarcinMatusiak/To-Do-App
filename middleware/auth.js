@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 module.exports = function(req, res, next) {
     const token = req.header('x-log-token');
-    if (!token) return  res.status(401).send('No token provided')
+    if (!token) return  res.status(401).send('No token provided - please sign up')
 
     try {
         const decoded = jwt.verify(token, config.get('jwtPrivateKey'));  

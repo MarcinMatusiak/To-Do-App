@@ -7,18 +7,21 @@ router.post('/', async(req, res) => {
     if (error) return res.status(400).json({error: error.details[0].message});
 
     let task = new Task({
-        name: req.body.name,
+        content: req.body.content,
         isDone: req.body.isDone
     });
 
   await task.save();
-  res.status(200).json({task: task});
+  res.status(200).json({task: task})
 });
 
 router.get('/', async (req, res) => {
   Task.find({})
     .then(results => {
-      res.render('todo', {todos: results})
+      let todo = results.filter((task) => task.isDone === 'to do')
+      let inprogress= results.filter((task) => task.isDone === 'in progress')
+      let done = results.filter((task) => task.isDone === 'done')
+      res.render('todo', {todos: todo, inprogress: inprogress, done: done})
     });
 })
 
