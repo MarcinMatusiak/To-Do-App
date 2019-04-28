@@ -5,6 +5,7 @@ button.onclick = function () {
     Array.from(board).map((el, i) => {
         el.remove();
     });
+    localStorage.clear();
 };
 
 
