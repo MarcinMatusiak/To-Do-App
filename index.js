@@ -6,7 +6,6 @@ const app = express();
 const users = require('./routes/users');
 const login = require('./routes/login');
 const tasks = require('./routes/tasks');
-const updateTask = require('./routes/updates');
 const config = require('config');
 
 if(!config.get('jwtPrivateKey')) {
@@ -19,9 +18,8 @@ app.use(bodyParser.json());
 app.use('/', login);
 app.use('/register', users);
 app.use('/me', tasks);
-app.use('/update', updateTask);
 app.use('/add', tasks);
-app.use('/update', updateTask);
+
 
 //View engine setup
 const mustacheExpressInstance = mustacheExpress();
