@@ -30,14 +30,14 @@ document.getElementById('logForm').addEventListener('submit', (event) => {
       .catch(function(err) {
         console.log('Fetch Error :-S', err);
       });
-})
+});
 
 const regButton = document.getElementById('register');
 if (regButton) {
     regButton.onclick = function(e) {
         e.preventDefault();
         document.querySelector('form').setAttribute('action', '/register');
-        document.querySelector('#submit-btn').innerHTML = `<i class="fas fa-sign-in-alt"></i>Zarejestruj się`;
+        document.querySelector('#submit-btn').innerHTML = `<i class="fas fa-share-square"></i> Zarejestruj się`;
         document.querySelector('#register').style.display = 'none';
     }
 }

@@ -38,6 +38,12 @@ html {
     background-size: cover;
 }
 
+@media screen and (max-width: 640px) and (orientation: portrait) {
+    .container {
+        height: auto;
+    }
+}
+
 /* Container menu */
 .container__menu {
     height: 50px;
@@ -79,6 +85,14 @@ html {
     color: var(--primary_font_color);
 }
 
+@media screen and (max-width: 640px) and (orientation: portrait) {
+    .container__tasks {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 /* Tasks containers */
 .container__todo,
 .container__progress,
@@ -110,6 +124,15 @@ html {
     font-size: 25px;
     margin-bottom: 10px;
 }
+
+@media screen and (max-width: 640px) and (orientation: portrait) {
+    .container__todo,
+    .container__progress,
+    .container__done {
+        width: 100%;
+    }
+}
+
 
 /* Container for tasks */
 .task {
