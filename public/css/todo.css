@@ -78,10 +78,6 @@ html {
     font-family: var(--main_font);
 }
 
-.container__menu button>svg {
-    margin-left: 5px;
-}
-
 .container__menu button:hover {
     color: var(--add_button);
 }

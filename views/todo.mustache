@@ -39,10 +39,10 @@
                     <div class="edit-close"><i class="fas fa-times"></i><i class="fas fa-edit"></i></div>
                 </div>
                 {{#todos}}
-                <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag{{_id}}">
-                    <p>{{content}}</p>
-                    <div class="edit-close"><i class="fas fa-times"></i><i class="fas fa-edit"></i></div>
-                </div>
+                    <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag{{_id}}">
+                        <p>{{content}}</p>
+                        <div class="edit-close"><i class="fas fa-times"></i><i class="fas fa-edit"></i></div>
+                    </div>
                 {{/todos}}
             </div>
             <div class="task__add">
@@ -52,14 +52,16 @@
                     <div class="modal-content">
                         <span class="close">&times;</span>
                         <form id="add_task" action="/me" method="post">
-                        <input type="text" name="content" >
-                        <select name="isDone" id="select">
-                            <option value="to do">to do</option>
-                            <option value="in progress">in progress</option>
-                            <option value="done">done</option>
-                        </select>
-                        <p id="error"></p>
-                        <button type="submit" id="submit-task"><i class="fas fa-plus-square"></i> Add a task</button>
+                            <input type="text" name="content" placeholder="Tutaj wpisz zadanie">
+                            <select name="isDone" id="select">
+                                <option value="to do">to do</option>
+                                <option value="in progress">in progress</option>
+                                <option value="done">done</option>
+                            </select>
+                            <p id="error"></p>
+                            <button type="submit" id="submit-task"><i class="fas fa-plus-square"></i> Add a task
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -70,12 +72,12 @@
             <h1><i class="fas fa-briefcase"></i><br/> In progress</h1>
             <div class="task" id="progress" ondrop="drop(event)" ondragover="allowDrop(event)">
 
-            {{#inprogress}}
-                <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag{{_id}}">
-                    <p>{{content}}</p>
-                    <div class="edit-close"><i class="fas fa-times"></i><i class="fas fa-edit"></i></div>
-                </div>
-            {{/inprogress}}
+                {{#inprogress}}
+                    <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag{{_id}}">
+                        <p>{{content}}</p>
+                        <div class="edit-close"><i class="fas fa-times"></i><i class="fas fa-edit"></i></div>
+                    </div>
+                {{/inprogress}}
 
             </div>
             <div class="task__add">
@@ -88,12 +90,12 @@
             <h1><i class="fas fa-clipboard-check"></i><br/> Done</h1>
             <div class="task" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
 
-            {{#done}}
-                <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag{{_id}}">
-                    <p>{{content}}</p>
-                    <div class="edit-close"><i class="fas fa-times"></i><i class="fas fa-edit"></i></div>
-                </div>
-            {{/done}}
+                {{#done}}
+                    <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag{{_id}}">
+                        <p>{{content}}</p>
+                        <div class="edit-close"><i class="fas fa-times"></i><i class="fas fa-edit"></i></div>
+                    </div>
+                {{/done}}
 
             </div>
             <div class="task__add">
