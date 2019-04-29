@@ -20,7 +20,6 @@ btn3.onclick = function () {
     modal.style.display = "block";
 };
 
-
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
     modal.style.display = "none";
@@ -32,4 +31,29 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 };
+
+//make a request to a post method creating task
+document.getElementById('add_task').addEventListener('submit', (event) => {
+    event.preventDefault();
+   fetch(event.target.action, {
+        method: 'POST',
+        body: new URLSearchParams(new FormData(event.target)),
+        headers: {
+            "x-log-token": localStorage.getItem("token"),
+        },
+    }).then(
+        function(response) {
+          response.json().then(function(data) {
+           if (data.error) {
+                document.getElementById('error').textContent = data.error
+           } else {
+               window.location.replace('/me');
+        }
+          });
+        }
+      )
+      .catch(function(err) {
+        console.log('Fetch Error :-S', err);
+      });
+});
 

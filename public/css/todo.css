@@ -38,6 +38,12 @@ html {
     background-size: cover;
 }
 
+@media screen and (max-width: 640px) and (orientation: portrait) {
+    .container {
+        height: auto;
+    }
+}
+
 /* Container menu */
 .container__menu {
     height: 50px;
@@ -63,6 +69,19 @@ html {
     text-decoration: none;
 }
 
+.container__menu button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: var(--main_font);
+}
+
+.container__menu button:hover {
+    color: var(--add_button);
+}
+
 .container__menu a>svg {
     margin-right: 10px;
 }
@@ -77,6 +96,14 @@ html {
     width: 100vw;
     height: auto;
     color: var(--primary_font_color);
+}
+
+@media screen and (max-width: 640px) and (orientation: portrait) {
+    .container__tasks {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /* Tasks containers */
@@ -110,6 +137,15 @@ html {
     font-size: 25px;
     margin-bottom: 10px;
 }
+
+@media screen and (max-width: 640px) and (orientation: portrait) {
+    .container__todo,
+    .container__progress,
+    .container__done {
+        width: 100%;
+    }
+}
+
 
 /* Container for tasks */
 .task {
@@ -179,4 +215,18 @@ html {
 .task__add button>svg {
     font-size: 16px;
     margin-right: 10px;
+}
+
+.edit-close{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-close svg {
+    margin: 1px;
+}
+
+.fa-edit{
+    font-size:14px;
 }
