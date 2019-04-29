@@ -36,13 +36,15 @@
             <div class="task" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
 
                 {{#todos}}
-                    <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag{{id}}">
+                    <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag{{_id}}" task_id={{id}}>
                         <p>{{content}}</p>
                         <div class="edit-close">
+                            <button class="open_modal_edit">
+                            <i class="fas fa-edit"></i>
+                            </button>
                             <button type="button" class="delete_task" onclick="handleClick('{{id}}')">
                                 <i class="fas fa-times"></i>
                             </button>
-                            <i class="fas fa-edit"></i>
                         </div>
                     </div>
                 {{/todos}}
@@ -68,6 +70,23 @@
                     </div>
                 </div>
             </div>
+             <!-- Modal Window for editing -->
+                <div id="modal-edit" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <form id="edit_task" action="/me" method="put">
+                            <input type="text" name="content" id="content">
+                            <select name="isDone" id="select">
+                                <option value="to do">to do</option>
+                                <option value="in progress">in progress</option>
+                                <option value="done">done</option>
+                            </select>
+                            <p id="error"></p>
+                            <button type="submit" id="edit-task"><i class="fas fa-plus-square"></i> Save a task
+                            </button>
+                        </form>
+                    </div>
+                </div>
         </section>
 
         <!-- In progress container -->
@@ -76,13 +95,15 @@
             <div class="task" id="progress" ondrop="drop(event)" ondragover="allowDrop(event)">
 
                 {{#inprogress}}
-                    <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag{{_id}}">
+                    <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag{{_id}}" task_id={{id}}>
                         <p>{{content}}</p>
                         <div class="edit-close">
+                            <button class="open_modal_edit">
+                                <i class="fas fa-edit"></i>
+                            </button>
                             <button type="button" class="delete_task" onclick="handleClick('{{id}}')">
                                 <i class="fas fa-times"></i>
                             </button>
-                            <i class="fas fa-edit"></i>
                         </div>
                     </div>
                 {{/inprogress}}
@@ -99,13 +120,15 @@
             <div class="task" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
 
                 {{#done}}
-                    <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag{{_id}}">
+                    <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag{{_id}}" task_id={{id}}>
                         <p>{{content}}</p>
                         <div class="edit-close">
+                            <button class="open_modal_edit">
+                                <i class="fas fa-edit"></i>
+                            </button>
                             <button type="button" class="delete_task" onclick="handleClick('{{id}}')">
                                 <i class="fas fa-times"></i>
                             </button>
-                            <i class="fas fa-edit"></i>
                         </div>
                     </div>
                 {{/done}}
