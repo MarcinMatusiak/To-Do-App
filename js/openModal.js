@@ -60,7 +60,7 @@ document.getElementById('add_task').addEventListener('submit', (event) => {
            if (data.error) {
                 document.getElementById('error').textContent = data.error
            } else {
-               window.location.replace('/me');
+               window.location.replace(`/me/${data.userId}`);
         }
           });
         }
@@ -97,7 +97,7 @@ for (let i = 0; i < editButtons.length; i++) {
                if (data.error) {
                     document.getElementById('error').textContent = data.error
                } else {
-                   window.location.replace('/me');
+                   window.location.replace(`/me/${data.userId}`);
             }
               });
             }

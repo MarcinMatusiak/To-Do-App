@@ -6,7 +6,6 @@ const app = express();
 const users = require('./routes/users');
 const login = require('./routes/login');
 const tasks = require('./routes/tasks');
-const deleteTask = require('./routes/delete')
 const config = require('config');
 
 
@@ -21,7 +20,6 @@ app.use('/', login);
 app.use('/register', users);
 app.use('/me', tasks);
 app.use('/add', tasks);
-app.use('/delete', deleteTask)
 
 //View engine setup
 const mustacheExpressInstance = mustacheExpress();
@@ -50,9 +48,6 @@ app.get('/register', (req, res) => {
     res.render('register', {});
 });
 
-app.get('/me', (req, res) => {
-    res.render('todo', {});
-});
 
 const port = process.env.PORT || 3000;
 
