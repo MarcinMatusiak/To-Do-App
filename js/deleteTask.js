@@ -1,5 +1,5 @@
 function handleClick(id) {
-    fetch(`http://localhost:3000/delete/${id}`, {
+    fetch(`${window.location.origin}/delete/${id}`, {
             method: 'DELETE',
             headers: {"x-log-token": localStorage.getItem("token")},
     })  .then(async function (response) {
