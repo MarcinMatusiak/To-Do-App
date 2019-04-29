@@ -150,7 +150,9 @@ html {
 /* Container for tasks */
 .task {
     height: auto;
+    max-height: calc(100vh - 261px);
     min-height: 100px;
+    overflow: auto;
     width: 100%;
     display: flex;
     padding: 10px 0;
@@ -158,6 +160,13 @@ html {
     align-items: center;
     justify-content: center;
     background-color: var(--drop_down);
+}
+
+@media screen and (max-width: 640px) {
+    .task {
+        max-height: initial;
+        overflow: initial;
+    }
 }
 
 /* Single task */
