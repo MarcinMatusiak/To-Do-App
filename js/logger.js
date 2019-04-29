@@ -1,7 +1,8 @@
 function authorization() {
     const token = localStorage.getItem('token');
-    if (token !== null) {
-        window.location.replace('/me');
+    const id = localStorage.getItem('id');
+    if (token !== null & id !== null) {
+        window.location.replace(`/me/${id}`);
     }
 }
 
@@ -20,8 +21,9 @@ document.getElementById('logForm').addEventListener('submit', (event) => {
            } else if (data.token) {
                 let token = data.token;
                 if (token !== null) {
-                localStorage.setItem('token', token); 
-                window.location.replace('/me');
+                localStorage.setItem('token', token);
+                localStorage.setItem('id', data.id); 
+                window.location.replace(`/me/${data.id}`);
            }
         }
           });

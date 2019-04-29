@@ -1,13 +1,14 @@
-function handleClick(id) {
-    fetch(`http://localhost:3000/delete/${id}`, {
+function handleClick(id,e) {
+    fetch(`${window.location.href}/${id}`, {
             method: 'DELETE',
             headers: {"x-log-token": localStorage.getItem("token")},
-    })  .then(async function (response) {
-            try {
-                window.location.replace('/me');
-            }
-            catch (err){
-                console.log('Fetch Error :-S', err);
-            }
-    });
+    })  .then( function (response) {
+        response.json().then(function(data) {
+                 window.location.replace(`/me/${data.userId}`);
+           });
+         }
+       )
+       .catch(function(err) {
+         console.log('Fetch Error :-S', err);
+       });
 };
