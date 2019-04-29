@@ -8,7 +8,9 @@ const btn2 = document.getElementsByClassName("open-modal")[1];
 const btn3 = document.getElementsByClassName("open-modal")[2];
 
 // Get the <span> element that closes the modal
+
 const span = document.getElementsByClassName("close")[0];
+const span_edit = document.getElementsByClassName("close")[1];
 
 // When the user clicks the button, open the modal 
 btn1.onclick = function () {
@@ -25,12 +27,20 @@ btn3.onclick = function () {
 span.onclick = function () {
     modal.style.display = "none";
 };
+span_edit.onclick = function () {
+  modal_edit.style.display = "none";
+};
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+};
+window.onclick = function (event) {
+  if (event.target == modal_edit) {
+    modal_edit.style.display = "none";
+  }
 };
 
 //make a request to a post method creating task

@@ -1,4 +1,4 @@
-.modal {
+.modal, .modal_edit {
     display: none;
     position: fixed;
     z-index: 1;
@@ -7,12 +7,6 @@
     top: 0;
     width: 100%;
     height: 100%;
-    /*overflow: auto;
-    Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
 }
 
 /* Modal Content */
@@ -28,9 +22,7 @@
     width: 100%;
     height: 10vh;
     font-family: var(--main_font);
-    font-size: 1em;
     padding: 10px;
-    border-radius:5px;
     box-shadow: 0 1px 0 rgba(9, 45, 66, .25);
 }
 
@@ -56,11 +48,11 @@
     cursor: pointer;
 }
 
-#add_task {
+#add_task, #edit_task {
     height: auto;
 }
 
-#add_task input {
+#add_task input, #edit_task input {
     margin-bottom: 20px;
     border-radius: 0;
     background-color: #E2E8E2;
@@ -69,7 +61,7 @@
     border: none;
 }
 
-#add_task select {
+#add_task select, #edit_task select {
     text-indent: 10px;
     background-color: #E2E8E2;
     font-size: 12px;
@@ -80,7 +72,7 @@
     border: 2px solid #E2E8E2;
 }
 
-#add_task select:hover {
+#add_task select:hover, #edit_task select:hover {
     text-indent: 10px;
     background-color: greenyellow;
 }
