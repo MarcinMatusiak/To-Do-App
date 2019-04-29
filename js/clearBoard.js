@@ -6,7 +6,7 @@ button.onclick = function (event) {
         el.remove();
     });
 
-    fetch("http://localhost:3000/delete", {
+    fetch(`${window.location.origin}/delete`, {
             method: 'DELETE',
             headers: {
                 "x-log-token": localStorage.getItem("token"),

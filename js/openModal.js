@@ -4,20 +4,26 @@ const modal_edit = document.getElementById('modal-edit');
 
 // Get the button that opens the modal
 const btn1 = document.getElementsByClassName("open-modal")[0];
-const btn2 = document.getElementsByClassName("open-modal")[1];
+const btn2 = document.getElementsByClassName("open-modal")[1]; //edit
 const btn3 = document.getElementsByClassName("open-modal")[2];
+const btn4 = document.getElementsByClassName("open-modal")[3];
 
 // Get the <span> element that closes the modal
+
 const span = document.getElementsByClassName("close")[0];
+const span_edit = document.getElementsByClassName("close")[1];
 
 // When the user clicks the button, open the modal 
 btn1.onclick = function () {
     modal.style.display = "block";
 };
 btn2.onclick = function () {
-    modal.style.display = "block";
+    modal_edit.style.display = "block";
 };
 btn3.onclick = function () {
+    modal.style.display = "block";
+};
+btn4.onclick = function () {
     modal.style.display = "block";
 };
 
@@ -25,11 +31,17 @@ btn3.onclick = function () {
 span.onclick = function () {
     modal.style.display = "none";
 };
+span_edit.onclick = function () {
+    modal_edit.style.display = "none";
+};
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
     if (event.target == modal) {
-        modal.style.display = "none";
+      modal.style.display = "none";
+    }
+    if (event.target == modal_edit) {
+      modal_edit.style.display = "none";
     }
 };
 
