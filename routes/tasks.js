@@ -23,6 +23,6 @@ router.get('/', async (req, res) => {
       let done = results.filter((task) => task.isDone === 'done')
       res.render('todo', {todos: todo, inprogress: inprogress, done: done})
     });
-})
+});
 
 module.exports = router;

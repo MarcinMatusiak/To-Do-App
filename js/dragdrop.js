@@ -4,6 +4,7 @@ function allowDrop(e) {
 
 function drag(e) {
     e.dataTransfer.setData("text", e.target.id);
+
 }
 
 function drop(e) {
