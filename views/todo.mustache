@@ -6,8 +6,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/todo.css">
-    <link rel="stylesheet" href="css/modalWindow.css">
+    <link rel="stylesheet" href="../css/todo.css">
+    <link rel="stylesheet" href="../css/modalWindow.css">
     <link href="https://fonts.googleapis.com/css?family=Cute+Font|Roboto:300,400&amp;subset=latin-ext" rel="stylesheet">
     <title>Safety Life List</title>
 </head>
@@ -56,7 +56,7 @@
                 <div id="modal-window" class="modal">
                     <div class="modal-content">
                         <span class="close">&times;</span>
-                        <form id="add_task" action="/me" method="post">
+                        <form id="add_task" action="{{userId}}" method="post">
                             <input type="text" name="content" placeholder="Tutaj wpisz zadanie">
                             <select name="isDone" id="select">
                                 <option value="to do">to do</option>
@@ -74,7 +74,7 @@
                 <div id="modal-edit" class="modal">
                     <div class="modal-content">
                         <span class="close">&times;</span>
-                        <form id="edit_task" action="/me" method="put">
+                        <form id="edit_task" action="{{userId}}" method="put">
                             <input type="text" name="content" id="content">
                             <select name="isDone" id="select">
                                 <option value="to do">to do</option>
@@ -142,11 +142,11 @@
 
 </div>
 </body>
-<script src="dragdrop.js"></script>
-<script src="openModal.js"></script>
-<script src="clearBoard.js"></script>
-<script src="deleteTask.js"></script>
-<script src="logOut.js"></script>
+<script src="../dragdrop.js"></script>
+<script src="../openModal.js"></script>
+<script src="../clearBoard.js"></script>
+<script src="../deleteTask.js"></script>
+<script src="../logOut.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
         integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
         crossorigin="anonymous"></script>

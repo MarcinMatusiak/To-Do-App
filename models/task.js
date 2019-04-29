@@ -10,6 +10,9 @@ const taskSchema = new mongoose.Schema({
         type: String,
         enum: ['to do', 'in progress', 'done'],
         default: 'to do',
+    },
+    userId: {
+        type: String,
     }
 });
 
@@ -18,7 +21,7 @@ const Task = mongoose.model('Task', taskSchema);
 function validateTask(task) {
     const schema = {
         content: Joi.string().required(),
-        isDone: Joi.string().valid(['to do', 'in progress', 'done'])
+        isDone: Joi.string().valid(['to do', 'in progress', 'done']),
     }
 
     return Joi.validate(task, schema);
