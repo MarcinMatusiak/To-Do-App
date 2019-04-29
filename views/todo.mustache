@@ -21,6 +21,10 @@
             <i class="fas fa-hard-hat"></i>
             Safety Life List
         </a>
+        <a href="#" onclick="logOut()">
+            <i class="fas fa-sign-out-alt"></i>
+            Log out
+        </a>
         <button onclick="clear(event)" id="clear" title="Wyczyść wszystko"><i class="fas fa-trash"></i></button>
     </section>
 
@@ -30,25 +34,21 @@
         <section class="container__todo">
             <h1><i class="fas fa-th-list"></i><br/> ToDo</h1>
             <div class="task" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag1">
-                    <p> Here is the first task </p>
-                    <div class="edit-close"><i class="fas fa-times"></i><i class="fas fa-edit"></i></div>
-                </div>
-                <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag2">
-                    <p> Here is the second task </p>
-                    <div class="edit-close"><i class="fas fa-times"></i><i class="fas fa-edit"></i></div>
-                </div>
+
                 {{#todos}}
                     <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag{{_id}}" task_id={{id}}>
                         <p>{{content}}</p>
                         <div class="edit-close">
-                            <i class="fas fa-times"></i>
                             <button class="open_modal_edit">
                             <i class="fas fa-edit"></i>
+                            </button>
+                            <button type="button" class="delete_task" onclick="handleClick('{{id}}')">
+                                <i class="fas fa-times"></i>
                             </button>
                         </div>
                     </div>
                 {{/todos}}
+                
             </div>
             <div class="task__add">
                 <button class="open-modal" type="button"><i class="fas fa-plus-square"></i> Add a card</button>
@@ -98,9 +98,11 @@
                     <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag{{_id}}" task_id={{id}}>
                         <p>{{content}}</p>
                         <div class="edit-close">
-                            <i class="fas fa-times"></i>
                             <button class="open_modal_edit">
                                 <i class="fas fa-edit"></i>
+                            </button>
+                            <button type="button" class="delete_task" onclick="handleClick('{{id}}')">
+                                <i class="fas fa-times"></i>
                             </button>
                         </div>
                     </div>
@@ -121,9 +123,11 @@
                     <div class="task__description" draggable="true" ondragstart="drag(event)" id="drag{{_id}}" task_id={{id}}>
                         <p>{{content}}</p>
                         <div class="edit-close">
-                            <i class="fas fa-times"></i>
                             <button class="open_modal_edit">
-                            <i class="fas fa-edit"></i>
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button type="button" class="delete_task" onclick="handleClick('{{id}}')">
+                                <i class="fas fa-times"></i>
                             </button>
                         </div>
                     </div>
@@ -141,6 +145,8 @@
 <script src="dragdrop.js"></script>
 <script src="openModal.js"></script>
 <script src="clearBoard.js"></script>
+<script src="deleteTask.js"></script>
+<script src="logOut.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
         integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
         crossorigin="anonymous"></script>

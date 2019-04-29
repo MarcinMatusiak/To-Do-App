@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
       let done = results.filter((task) => task.isDone === 'done')
       res.render('todo', {todos: todo, inprogress: inprogress, done: done})
     });
-})
+});
 
 router.put('/:id', async(req, res) => {
   let task = await Task.findById({_id: req.params.id});

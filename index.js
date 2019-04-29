@@ -6,7 +6,9 @@ const app = express();
 const users = require('./routes/users');
 const login = require('./routes/login');
 const tasks = require('./routes/tasks');
+const deleteTask = require('./routes/delete')
 const config = require('config');
+
 
 if(!config.get('jwtPrivateKey')) {
     console.error('FATAL ERROR: jwtPrivateKey is not defined.');
@@ -19,7 +21,7 @@ app.use('/', login);
 app.use('/register', users);
 app.use('/me', tasks);
 app.use('/add', tasks);
-
+app.use('/delete', deleteTask)
 
 //View engine setup
 const mustacheExpressInstance = mustacheExpress();
